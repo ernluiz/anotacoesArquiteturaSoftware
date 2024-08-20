@@ -78,3 +78,6 @@ O padrão micro-kernel é útil para sistemas que requerem alta flexibilidade e 
 > - **Arquitetura limpa: foca na separação de responsabilidades em camadas concêntricas, com o domínio no centro e dependências externas nas camadas mais externas.**
 > - **Arquitetura hexagonal: enfatiza a modularidade através de portas e adaptadores, permintindo que o núcleo da aplicação permaneça independente das interações externas.**
 
+![image](https://github.com/user-attachments/assets/2bdd2538-b4ea-4b09-9985-5bc7f5a48bbf)
+
+
