@@ -55,3 +55,26 @@ Exemplos de sistemas que utilizam a arquitetura micro-kernel incluem:
 - **Servidores de Aplicações:** Alguns servidores, como o JBoss e o Apache Tomcat, adotam uma abordagem micro-kernel para modularidade e extensibilidade.
 O padrão micro-kernel é útil para sistemas que requerem alta flexibilidade e extensibilidade, permitindo personalizar e expandir funcionalidades de forma eficiente.
 
+## Microsserviços
+
+> Pergunta de prova: **Quais as principais vantagens de utilizar microsserviços? R.: Escalabilidade e descentralização de times de desenvolvimento.**
+
+## Pipes and Filters
+
+> Os filtros processam os dados, enquanto os pipes transportam os dados entre os filtros. um exemplo clássico é o shell do Linux.
+
+## Arquitetura limpa
+
+> Enfatiza a separação de preocupações e a independência dos frameworks, interfaces de usuário, bancos de dados e outros detalhes externos; é um avanço da estrutura onion; **Ela diz que regras de negócio devem ser separadas de frameworks e interfaces de usuário.**
+> **Supre alguns _gaps_ da arquitetura hexagonal.**
+
+## Arquitetura hexagonal
+
+> Visa criar sistemas de software altamente desacolpados  testáveis, podendo as partes centrais da aplicação permanecerem independentes das interfaces de entrada e saída.
+
+![image](https://github.com/user-attachments/assets/2e3cd33f-7179-444d-86c8-247b8d56b0dc)
+
+> **Pergunta de prova: No que se resume arquitetura limpa e arquitetura hexagonal?**
+> - **Arquitetura limpa: foca na separação de responsabilidades em camadas concêntricas, com o domínio no centro e dependências externas nas camadas mais externas.**
+> - **Arquitetura hexagonal: enfatiza a modularidade através de portas e adaptadores, permintindo que o núcleo da aplicação permaneça independente das interações externas.**
+
