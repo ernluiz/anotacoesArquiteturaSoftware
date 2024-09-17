@@ -148,4 +148,55 @@ suas implementações específicas.
 - **Construção passo a passo:** Permite criar objetos complexos em etapas, adicionando um nível de controle sobre o processo de construção.
 - **Separação de preocupações:** Separa a lógica de construção do objeto (Builder) de sua representação final, permitindo que o mesmo processo construa diferentes tipos de objetos.
 - **Flexibilidade:** Facilita a criação de objetos com configurações variadas sem precisar de múltiplos construtores ou parâmetros opcionais.
+- 
+# Padrões estruturais
+> São descritas como soluções para problemas relacionados à composição de classes e objetos para formar estruturas maiores e mais flexíveis. Esses padrões ajudam a organizar e otimizar o design de sistemas de software, facilitando como os componentes interagem e se conectam.
 
+## Principais benefícios:
+- **Flexibilidade na composição de objetos**
+- **Desacoplamento**
+- **Manutenção e extensão**
+- **Simplificação de complexidade**
+
+## ADAPTER
+> O Adapter é um padrão de projeto estrutural que permite objetos com interfaces incompatíveis colaborarem entre si.
+> Permite que interfaces incompatíveis trabalhem juntas. Ele converte a interface de uma classe em outra interface esperada pelos clientes. 
+Assim, o Adapter atua como um intermediário que traduz as chamadas feitas pelo cliente para a interface da classe que não é compatível.
+> **Usado quando é necessário integrar sistemas legados com novos sistemas ou quando se deseja adaptar uma API para uma nova interface.**
+![image](https://github.com/user-attachments/assets/39057928-aea8-4ea9-ae01-b3fcef05c775)
+
+## BRIDGE
+> O Bridge é um padrão de projeto estrutural que permite que você divida uma classe grande ou um conjunto de classes intimamente ligadas em duas hierarquias separadas—abstração e implementação—que podem ser desenvolvidas independentemente umas das outras.
+> Desacopla uma abstração da sua implementação, permitindo que ambas evoluam independentemente. 
+> **É usado quando você quer separar uma abstração (a ideia principal ou conceito) de sua implementação concreta (a forma como o conceito é realizado). Isso é útil para evitar que mudanças em uma parte da estrutura (como uma classe) causem impacto na outra parte.**
+![image](https://github.com/user-attachments/assets/628a2f99-bd4d-4891-accf-4cf43e396619)
+
+## COMPOSITE
+> O Composite é um padrão de projeto estrutural que permite que você componha objetos em estruturas de árvores e então trabalhe com essas estruturas como se elas fossem objetos individuais.
+> O padrão Bridge permite separar a abstração (o controle remoto) da implementação (os dispositivos eletrônicos), possibilitando a criação de controles e dispositivos de forma independente, sem a necessidade de criar várias subclasses. Permite que você trate objetos individuais e composições de objetos de forma uniforme. Isso é útil quando você tem uma estrutura hierárquica de objetos, como uma árvore, onde cada nó pode ser um objeto simples ou um grupo de objetos.
+> **Usado quando precisar representar hierarquias de objetos, como estruturas de diretórios de arquivos ou interfaces gráficas complexas.**
+![image](https://github.com/user-attachments/assets/0da63548-52c6-4153-a77c-3f6202b64119)
+
+## DECORATOR
+> O Decorator é um padrão de projeto estrutural que permite que você acople novos comportamentos para objetos ao colocá-los dentro de invólucros de objetos que contém os comportamentos.
+> Permite adicionar responsabilidades a um objeto dinamicamente, sem alterar o código da classe original. Ele usa um conjunto de classes de decoração que envolvem o objeto original, adicionando funcionalidades adicionais.
+> **Utilizado para adicionar funcionalidades a objetos de maneira flexível e extensível, como adicionar estilos de janela em um sistema de GUI.**
+![image](https://github.com/user-attachments/assets/5203b3a2-842a-4aa3-bc89-ecc8ca8d04b6)
+
+## FACADE
+> O Facade é um padrão de projeto estrutural que fornece uma interface simplificada para uma biblioteca, um framework, ou qualquer conjunto complexo de classes.
+> Fornece uma interface simplificada para um conjunto de interfaces em um subsistema complexo. Em outras palavras, o Facade atua como uma "fachada" que oculta a complexidade de um sistema, oferecendo uma maneira mais fácil e direta para os interagirem com ele.
+> **É recomendado para ser usado em situações em que se deseja simplificar a interface de um subsistema complexo, dividir subsistemas em camadas, simplificar dependências entre subsistemas, simplificar uma sequência de operações complexas, simplificar a interface com o usuário.**
+![image](https://github.com/user-attachments/assets/eceac9fd-c807-4531-bd6d-f71cb8a00312)
+
+## FLYWEIGHT
+> O Flyweight é um padrão de projeto estrutural que permite a você colocar mais objetos na quantidade de RAM disponível ao compartilhar partes comuns de estado entre os múltiplos objetos ao invés de manter todos os dados em cada objeto.
+> Visa reduzir o uso de memória e melhorar o desempenho ao compartilhar objetos semelhantes em vez de criar novos objetos para cada instância.
+> **Ele é especialmente útil quando você precisa lidar com excesso de objetos que possuem características semelhantes.**
+![image](https://github.com/user-attachments/assets/24626af8-d93d-4821-924f-a00667e68f6f)
+
+## PROXY
+> O Proxy é um padrão de projeto estrutural que permite que você forneça um substituto ou um espaço reservado para outro objeto. Um proxy controla o acesso ao objeto original, permitindo que você faça algo ou antes ou depois do pedido chegar ao objeto original.
+> Fornece um substituto ou intermediário para outro objeto. Ele age como um "representante" do objeto real, controlando o acesso a ele e podendo adicionar funcionalidades extras, como controle de acesso, atraso na criação ou manipulação adicional.
+> **Usado para adicionar funcionalidades como controle de acesso, cache, ou outras operações intermediárias.**
+![image](https://github.com/user-attachments/assets/bc2f3986-bf1a-445b-ad24-9eb772226dd8)
