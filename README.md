@@ -200,3 +200,93 @@ Assim, o Adapter atua como um intermediário que traduz as chamadas feitas pelo 
 > Fornece um substituto ou intermediário para outro objeto. Ele age como um "representante" do objeto real, controlando o acesso a ele e podendo adicionar funcionalidades extras, como controle de acesso, atraso na criação ou manipulação adicional.
 > **Usado para adicionar funcionalidades como controle de acesso, cache, ou outras operações intermediárias.**
 ![image](https://github.com/user-attachments/assets/bc2f3986-bf1a-445b-ad24-9eb772226dd8)
+
+
+# PADRÕES COMPORTAMENTAIS - 2º bim
+> Os padrões comportamentais são focados em definir como os objetos interagem e se comunicam entre si dentro de um sistema. Eles abordam a atribuição de responsabilidades e a maneira como as classes colaboram, permitindo que o comportamento do sistema seja flexível e dinâmico sem a necessidade de modificações profundas no código.
+
+> Segundo o livro "Design Patterns: Elements of Reusable Object- Oriented Software" (GoF), os padrões comportamentais "se preocupam com algoritmos e a atribuição de responsabilidades entre objetos... não descrevem apenas padrões de objetos ou classes, mas também o padrão de comunicação entre eles." (GoF, p. 211). Esses padrões auxiliam a separar a lógica de controle do comportamento real dos objetos, facilitando a extensão e manutenção do código.
+
+## CHAIN OF RESPONSIBILITY
+
+> Permite que um pedido passe por uma cadeia de objetos potenciais, onde cada objeto tem a chance de tratar o pedido ou passá-lo adiante. Isso **promove um desacoplamento entre o remetente e os receptores, permitindo que vários objetos possam processar o pedido de forma ordenada e flexível**.
+> 
+> É um padrão de projeto comportamental que permite que você passe pedidos por uma corrente de handlers. Ao receber um pedido, cada handler decide se processa o pedido ou o passa adiante para o próximo handler na corrente.
+
+### Aplicações:
+- **Validação de Dados em Sistemas Web:** permite que cada validação seja tratada por um handler específico. Se uma validação falhar, a cadeia pode interromper o processo e retornar um erro;
+- **Sistemas de Autenticação e Autorização:** em sistemas complexos de autenticação, diferentes mecanismos (como autenticação por senha, autenticação OAuth, tokens JWT, etc.) podem ser processados de forma sequencial. O Chain of Responsibility pode ser utilizado para tentar várias formas de autenticação até que uma seja bem-sucedida;
+- **Manipulação de Requisições HTTP:** em frameworks web (como Spring ou Express.js), o padrão é usado frequentemente para tratar requisições HTTP. Cada middleware pode processar a requisição ou repassá-la ao próximo middleware na cadeia até que a resposta seja gerada;
+- **Manipulação de Exceções:** Ao lidar com exceções em uma aplicação, é possível encadear diferentes handlers para tratar exceções específicas de forma ordenada;
+- **Processamento de Pagamentos:** em sistemas de e-commerce, o processo de pagamento pode passar por várias etapas, como verificação de saldo, validação de cartão de crédito, e autorização do pagamento. Cada etapa pode ser um handler na cadeia.
+  
+![image](https://github.com/user-attachments/assets/4b46b64d-9588-4c74-9857-1f59b611555c)
+
+## COMMAND
+> Transforma uma solicitação em um objeto autônomo, que encapsula toda a informação necessária para executar uma ação. Isso inclui o próprio pedido, o receptor que o processará e, eventualmente, os parâmetros necessários. O padrão permite que comandos sejam armazenados, enfileirados, desfeitos ou refeitos sem a necessidade de conhecer os detalhes sobre quem ou como a solicitação será processada.
+>
+> **Esse padrão promove o desacoplamento entre o objeto que faz a solicitação e os objetos que realizam a ação**.
+
+### Aplicações:
+- **Execução de Operações de Desfazer (Undo/Redo):** em aplicações com interfaces ricas, como editores de texto, gráficos ou planilhas, o padrão Command permite implementar funcionalidade de desfazer e refazer operações;
+-  **Fila de Tarefas ou Jobs (Task Queues):** sistemas que precisam agendar ou enfileirar operações assíncronas, como sistemas de processamento em lotes, podem utilizar o padrão Command para encapsular cada tarefa como um comando;
+-  **Macro Comandos:** sistemas que precisam agrupar várias ações como uma única operação, como a execução de macros, podem se beneficiar do padrão Command;
+-  **Tratamento de Solicitações em Menu de Aplicações:** aplicações com interfaces gráficas que apresentam menus e botões podem usar o padrão Command para associar comandos a cada item de menu ou botão, permitindo a execução de ações de forma flexível;
+-  **Transações Bancárias:** em sistemas bancários, operações como transferências de dinheiro, pagamentos e depósitos podem ser encapsuladas como comandos. Isso facilita o processamento dessas operações de maneira uniforme e com suporte a transações reversíveis (como estornos);
+-  **Sistemas de Controle de Robôs:** em sistemas de controle de robôs ou dispositivos automatizados, comandos podem ser usados para encapsular diferentes ações do robô, como mover-se, parar, pegar um objeto, etc.
+
+![image](https://github.com/user-attachments/assets/34b61ef4-d7a6-4845-b034-364f8a6db96a)
+
+## INTERPRETER
+> Define uma forma de interpretar ou avaliar a gramática de uma linguagem, representando-a por meio de uma estrutura de classes. Ele **é útil quando você precisa interpretar ou analisar sentenças ou expressões escritas em uma linguagem particular, e cada símbolo ou expressão tem uma regra gramatical associada**.
+>
+> Este padrão é normalmente usado em cenários onde uma linguagem específica, um script ou expressões complexas precisam ser processados repetidamente.
+
+### Aplicações:
+- **Interpretação de Linguagens de Script:** muitos sistemas embutem linguagens de script para permitir que usuários finais escrevam pequenos programas ou automatizem processos. O padrão Interpreter é útil para processar e avaliar esses scripts;
+- **Interpretação de Expressões Matemáticas ou Lógicas:** sistemas que precisam avaliar expressões matemáticas ou lógicas podem se beneficiar do padrão Interpreter para processar essas expressões dinamicamente;
+- **Compiladores e Interpretadores de Linguagens de Programação:** o Interpreter é frequentemente usado no desenvolvimento de compiladores e interpretadores para linguagens de programação. Ele pode interpretar diretamente o código fonte ou traduzir para outro formato;
+- **Query Language (Linguagens de Consulta):** em sistemas de banco de dados ou análise de dados, o Interpreter pode ser usado para interpretar e executar linguagens de consulta personalizadas, como SQL ou DSLs para consultas.
+
+![image](https://github.com/user-attachments/assets/27507586-71db-4029-b586-f94d87922a3f)
+
+## ITERATOR
+> Permite percorrer uma coleção de objetos (como listas, arrays ou árvores) de forma sequencial, sem expor sua estrutura interna. O padrão separa a lógica de iteração da coleção, fornecendo uma interface comum para acessar os elementos um por um, independentemente da implementação da coleção. **O objetivo do Iterator é garantir que diferentes tipos de coleções possam ser percorridos de forma uniforme, oferecendo métodos como next(), hasNext(), e currentItem() para controlar o fluxo de acesso aos elementos.**
+>
+> O Iterator é um padrão de projeto comportamental que permite a você percorrer elementos de uma coleção sem expor as representações dele (lista, pilha, árvore, etc.).
+
+### Aplicações:
+- **Percorrer Coleções em Estruturas de Dados:** o uso mais comum do Iterator é para percorrer coleções como listas, vetores, filas, pilhas, conjuntos, e mapas;
+- **Sistemas de Banco de Dados:** em sistemas de banco de dados, o Iterator é útil para percorrer grandes conjuntos de resultados de consultas (result sets) sem carregar todos os dados na memória de uma vez;
+- **Percorrer Componentes de Interfaces Gráficas:** em frameworks de interfaces gráficas, o Iterator pode ser usado para percorrer elementos de uma interface, como botões, campos de texto, e outros componentes UI, sem precisar conhecer a estrutura interna da interface;
+- **Percorrer Documentos XML ou JSON:** em sistemas que precisam processar documentos estruturados, como XML ou JSON, o Iterator pode ser usado para percorrer os nós desses documentos de forma eficiente;
+- **Histórico de Comandos em Editores de Texto:** em editores de texto ou gráficos que possuem um histórico de ações (como desfazer e refazer), o Iterator pode ser utilizado para percorrer os comandos anteriores de maneira controlada.
+
+![image](https://github.com/user-attachments/assets/973bc02b-8420-4265-a066-c3e63339d677)
+
+
+## MEDIATOR
+> Centraliza a comunicação entre objetos, evitando que eles se comuniquem diretamente uns com os outros. Isso promove o desacoplamento entre os objetos, pois, ao invés de se comunicarem
+diretamente, eles passam a interagir mediante um intermediário, o Mediator. Esse padrão **é útil quando há inúmeras interações complexas entre os objetos, o que poderia tornar o sistema difícil de manter e modificar**.
+
+### Aplicações:
+- **Sistemas de Interface Gráfica (GUI):** em interfaces gráficas de usuário, diversos componentes (botões, caixas de texto, menus) interagem uns com os outros para atualizar o estado da interface. O Mediator pode ser usado para centralizar essa comunicação entre componentes da GUI;
+- **Sistemas de Chat ou Mensagens:** em sistemas de chat ou mensagens, os usuários podem se comunicar em grupos ou individualmente. O Mediator pode coordenar a troca de mensagens entre os usuários, garantindo que eles não precisem se conhecer diretamente;
+- **Sistemas de Controle de Tráfego Aéreo:** em sistemas de controle de tráfego aéreo, diversos aviões precisam se coordenar para evitar colisões. O Mediator pode atuar como a torre de controle, recebendo informações de cada avião e enviando instruções para coordenar as suas rotas;
+- **Jogos Multiplayer:** em jogos multiplayer, os jogadores precisam interagir entre si e com o ambiente de maneira coordenada. O Mediator pode centralizar essas interações, gerenciando o estado do jogo e a comunicação entre os jogadores.
+
+![image](https://github.com/user-attachments/assets/422ac614-5262-4a1a-ad56-4556fcd42563)
+
+## MEMENTO
+> Permite capturar e armazenar o estado interno de um objeto em um determinado momento, sem expor os detalhes de sua implementação. Posteriormente, esse estado pode ser restaurado, permitindo que o objeto volte a uma configuração anterior. **A principal vantagem do Memento é que ele mantém a integridade do encapsulamento do objeto original, pois o estado armazenado não é exposto diretamente para o cliente ou outros objetos**.
+
+### Aplicações:
+- **Funcionalidade de "Desfazer" (Undo/Redo):** um dos usos mais comuns do Memento é na implementação de sistemas de "desfazer" e "refazer", que exigem a capacidade de retornar a um estado anterior;
+- **Jogos de Vídeo com "Checkpoints" ou "Save Points":** em jogos de vídeo, especialmente em jogos de aventura ou RPG, o estado do jogo em um determinado ponto pode ser armazenado, permitindo ao jogador retomar o jogo do ponto salvo em vez de reiniciar do início;
+- **Sistemas de Banco de Dados (Versões ou Snapshots):** em sistemas de banco de dados, pode ser útil armazenar um "snapshot" de dados em um ponto no tempo para que o sistema possa ser restaurado a esse estado mais tarde, em caso de erro ou corrupção de dados;
+- **E-commerce – Carrinho de Compras:** em aplicações de e-commerce, capturar o estado do carrinho de compras de um usuário pode ser útil para restaurar o estado após uma falha no sistema ou após o usuário sair e retornar ao site.
+
+![image](https://github.com/user-attachments/assets/0e9e4b7a-b28b-41c7-a271-719f9da918f3)
+
+
+
