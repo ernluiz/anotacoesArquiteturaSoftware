@@ -288,5 +288,15 @@ diretamente, eles passam a interagir mediante um intermediário, o Mediator. Ess
 
 ![image](https://github.com/user-attachments/assets/0e9e4b7a-b28b-41c7-a271-719f9da918f3)
 
+## OBSERVER
+> O Observer é um padrão de projeto comportamental que permite que você defina um mecanismo de assinatura para notificar múltiplos objetos sobre quaisquer eventos que aconteçam com o objeto que eles estão observando. O padrão Observer **é utilizado quando há a necessidade de notificar automaticamente uma ou mais partes do sistema sobre mudanças em um estado ou evento, promovendo um desacoplamento entre os componentes**.
 
+### Aplicações:
+- **Interface de Usuário (UI) e Atualização de Dados em Tempo Real:** quando a interface gráfica de um aplicativo precisa refletir alterações nos dados em tempo real, o Observer permite que a UI seja automaticamente atualizada;
+- **Sistemas de Notificações:** em sistemas que precisam alertar várias partes interessadas ou componentes quando um evento ocorre, o Observer é ideal para permitir que esses eventos sejam propagados;
+- **Redes Sociais (Atualizações de Feed):** plataformas de redes sociais precisam notificar usuários quando há novas postagens, comentários, ou interações em seus feeds:
+- **Sistemas de Leitura de Sensores IoT:** em aplicações de Internet das Coisas (IoT), sensores monitoram o ambiente e precisam notificar um controlador central ou outros dispositivos sobre mudanças;
+- **Ambientes de Desenvolvimento Integrado (IDE):** em IDEs como IntelliJ IDEA ou Visual Studio, ferramentas de desenvolvimento podem observar o estado do código e gerar eventos quando certos padrões são detectados, como erros de sintaxe ou warnings;
+- **Atualizações em Sistemas de Controle de Estoque:** em um sistema de controle de estoque, as alterações no estoque (como a adição ou remoção de produtos) podem notificar outros sistemas interessados, como o departamento de compras ou as plataformas de e-commerce.
 
+![image](image-1.png)
